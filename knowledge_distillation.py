@@ -297,10 +297,6 @@ class DistillationTrainer:
         # Calculate metrics
         eval_loss = eval_loss / len(data_loader)
         
-        if self.num_categories > 1:
-            # Concatenate all labels and predictions
-            all_labels = np.concatenate(all_labels, axis=0)
-            all_preds = np.concatenate(all_preds, axis=0)
         # Accuracy
         accuracy = accuracy_score(all_labels, all_preds)
         # Precision
